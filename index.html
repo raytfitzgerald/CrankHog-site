@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FreeGaz: the free indoor trainer app</title>
-  <meta name="description" content="FreeGaz is a free, open-source indoor cycling trainer for macOS and your phone. ERG, workouts, FTP tests, real routes, a workout builder and coaches with opinions. No subscription.">
+  <title>CrankHog: the free indoor trainer app</title>
+  <meta name="description" content="CrankHog is a free, open-source indoor cycling trainer for macOS and your phone. ERG, workouts, FTP tests, real routes, a workout builder and coaches with opinions. No subscription.">
   <meta name="theme-color" content="#111d36" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ebf1f7" media="(prefers-color-scheme: light)">
   <meta name="color-scheme" content="dark light">
-  <link rel="canonical" href="https://freegaz.app/">
-  <link rel="icon" href="assets/brand/freegaz-icon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://crankhog.app/">
+  <link rel="icon" href="assets/brand/crankhog-icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/brand/icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freegaz.app/">
-  <meta property="og:site_name" content="FreeGaz">
-  <meta property="og:title" content="FreeGaz">
+  <meta property="og:url" content="https://crankhog.app/">
+  <meta property="og:site_name" content="CrankHog">
+  <meta property="og:title" content="CrankHog">
   <meta property="og:description" content="The free indoor trainer app for Mac and your phone. ERG, workouts, FTP tests, real routes and rude coaches. No subscription.">
-  <meta property="og:image" content="https://freegaz.app/assets/img/og.png">
+  <meta property="og:image" content="https://crankhog.app/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="FreeGaz: the indoor trainer app that never sends you a bill. Free, open source, Mac and phone.">
+  <meta property="og:image:alt" content="CrankHog: the indoor trainer app that never sends you a bill. Free, open source, Mac and phone.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FreeGaz">
-  <meta name="twitter:image" content="https://freegaz.app/assets/img/og.png">
+  <meta name="twitter:title" content="CrankHog">
+  <meta name="twitter:image" content="https://crankhog.app/assets/img/og.png">
 
   <link rel="preload" href="assets/fonts/saira.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
@@ -34,10 +34,10 @@
 
   <header class="site-header">
     <div class="wrap header-row">
-      <a href="#top" class="brand" aria-label="FreeGaz home">
+      <a href="#top" class="brand" aria-label="CrankHog home">
         <picture>
-          <source media="(prefers-color-scheme: light)" srcset="assets/brand/freegaz-wordmark.svg">
-          <img src="assets/brand/freegaz-wordmark-night.svg" alt="FreeGaz" width="132" height="53">
+          <source media="(prefers-color-scheme: light)" srcset="assets/brand/crankhog-wordmark.svg">
+          <img src="assets/brand/crankhog-wordmark-night.svg" alt="CrankHog" width="132" height="53">
         </picture>
       </a>
       <nav aria-label="Main">
@@ -58,7 +58,7 @@
       <div class="wrap">
         <p class="eyebrow">Indoor cycling for macOS and your phone</p>
         <h1>The indoor trainer app that doesn't send you a bill every month.</h1>
-        <p class="lede">You bought the smart trainer. You bought the bike. FreeGaz drives them in ERG, level, slope or heart-rate mode, runs structured workouts and FTP tests, rides real roads, and keeps every second on your Mac as a FIT file. It costs nothing, now or later.</p>
+        <p class="lede">You bought the smart trainer. You bought the bike. CrankHog drives them in ERG, level, slope or heart-rate mode, runs structured workouts and FTP tests, rides real roads, and keeps every second on your Mac as a FIT file. It costs nothing, now or later.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/raytfitzgerald/FreeGaz/releases" data-dmg>
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
@@ -71,7 +71,7 @@
         <figure class="hero-shot">
           <picture>
             <source media="(prefers-color-scheme: light)" srcset="assets/img/home-light.png">
-            <img src="assets/img/home.png" width="1600" height="1000" alt="FreeGaz Home: a velodrome seen from above with this week's rides lapping it, and a coach shouting from the infield through a megaphone">
+            <img src="assets/img/home.png" width="1600" height="1000" alt="CrankHog Home: a velodrome seen from above with this week's rides lapping it, and a coach shouting from the infield through a megaphone">
           </picture>
         </figure>
       </div>
@@ -89,7 +89,9 @@
         </ul>
         <p class="board-note">No Premium tier, no annual plan with the cancel button four menus deep, and no "your trial has ended" email on the morning of your FTP test. The only thing it charges is your legs.</p>
       </div>
-      <div class="track" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="track" aria-hidden="true"><span></span><span></span><span></span><span></span>
+        <img class="track-hog" src="assets/brand/sir-loin.svg" alt="" width="86" height="72">
+      </div>
     </section>
 
     <!-- Tour -->
@@ -97,6 +99,10 @@
       <div class="wrap">
         <p class="eyebrow">A quick tour</p>
         <h2 id="tour-title">Ready to suffer?</h2>
+        <figure class="hog-intro">
+          <img src="assets/brand/sir-loin.svg" alt="Sir Loin, a hog in a cycling cap, with tusks" width="86" height="72">
+          <figcaption><strong>This is Sir Loin.</strong> He laps the velodrome on your home screen whether you ride or not, he turns up on the road ahead when you least want him to, and he has never once been FTP tested. On a week you haven't ridden, he has the whole track to himself.</figcaption>
+        </figure>
 
         <article class="feature">
           <div class="feature-text">
@@ -128,7 +134,7 @@
         <article class="feature flip">
           <div class="feature-text">
             <h3>Workouts you can see before they hurt you</h3>
-            <p>Every workout is drawn as its power profile at your FTP, on three shelves: FreeGaz's own, your custom ones, and a training plan you put in order.</p>
+            <p>Every workout is drawn as its power profile at your FTP, on three shelves: CrankHog's own, your custom ones, and a training plan you put in order.</p>
             <p>There's an FTP test too: 20-minute, 8-minute or ramp. A valid result saves your FTP automatically, with one-click undo.</p>
           </div>
           <figure class="shot"><img loading="lazy" src="assets/img/workouts.png" width="1600" height="1000" alt="The Workouts page: every workout drawn as its power profile, with Custom workouts and Training plan tabs"></figure>
@@ -245,7 +251,7 @@
           <h2 id="data-title">Your rides stay yours</h2>
         </div>
         <div class="data-text">
-          <p>Everything lives on your Mac: the ride database, plus a FIT file per ride in <code>~/Documents/FreeGaz/Rides</code>. Point that folder at iCloud Drive for free sync.</p>
+          <p>Everything lives on your Mac: the ride database, plus a FIT file per ride in <code>~/Documents/CrankHog/Rides</code>. Point that folder at iCloud Drive for free sync.</p>
           <p>Nothing leaves the machine unless you connect Strava or intervals.icu, turn on an AI provider, or send a bug report. API keys are encrypted with your macOS Keychain.</p>
         </div>
       </div>
@@ -256,7 +262,7 @@
       <div class="wrap">
         <p class="eyebrow">On your phone</p>
         <h2 id="phone-title">No app store involved</h2>
-        <p class="section-lede">Open FreeGaz in your phone's browser and add it to your home screen. It gets its own icon, opens full screen and works offline, which is handy, because the pain cave never has Wi-Fi.</p>
+        <p class="section-lede">Open CrankHog in your phone's browser and add it to your home screen. It gets its own icon, opens full screen and works offline, which is handy, because the pain cave never has Wi-Fi.</p>
         <div class="grid two">
           <div class="card">
             <h3>Android (Chrome)</h3>
@@ -277,7 +283,7 @@
             </ol>
           </div>
         </div>
-        <p class="cta-row"><a class="btn btn-secondary" href="https://raytfitzgerald.github.io/FreeGaz/">Open FreeGaz on your phone</a></p>
+        <p class="cta-row"><a class="btn btn-secondary" href="https://raytfitzgerald.github.io/FreeGaz/">Open CrankHog on your phone</a></p>
       </div>
     </section>
 
@@ -291,9 +297,9 @@
             <h3>Mac</h3>
             <p>Needs a Mac with Apple Silicon and Bluetooth.</p>
             <ol>
-              <li>Download <span class="mono" data-dmg-name>FreeGaz-0.5.0-arm64.dmg</span> and drag FreeGaz to Applications.</li>
-              <li>Open FreeGaz. It's signed and notarized by Apple, so macOS only asks the usual "downloaded from the Internet" question. Click <strong>Open</strong>.</li>
-              <li>Quit Zwift and the Wahoo app so FreeGaz can control the trainer, then press <strong>Connect trainer</strong>.</li>
+              <li>Download <span class="mono" data-dmg-name>CrankHog-0.5.0-arm64.dmg</span> and drag CrankHog to Applications.</li>
+              <li>Open CrankHog. It's signed and notarized by Apple, so macOS only asks the usual "downloaded from the Internet" question. Click <strong>Open</strong>.</li>
+              <li>Quit Zwift and the Wahoo app so CrankHog can control the trainer, then press <strong>Connect trainer</strong>.</li>
             </ol>
             <p><a class="btn btn-primary" href="https://github.com/raytfitzgerald/FreeGaz/releases" data-dmg>Download for Mac</a></p>
           </div>
@@ -301,17 +307,17 @@
             <h3>From source</h3>
             <p>Needs Node 24 or later.</p>
             <pre><code>git clone https://github.com/raytfitzgerald/FreeGaz
-cd FreeGaz
+cd CrankHog
 npm install
 npm run dev</code></pre>
-            <p>No trainer handy? <code>FREEGAZ_SIM=1 npm run dev</code> runs it against a simulated KICKR and heart-rate strap.</p>
+            <p>No trainer handy? <code>CRANKHOG_SIM=1 npm run dev</code> runs it against a simulated KICKR and heart-rate strap.</p>
             <p><a href="https://github.com/raytfitzgerald/FreeGaz">Read the code on GitHub</a> · <a href="https://github.com/raytfitzgerald/FreeGaz/issues/new/choose">Report a bug</a></p>
           </div>
         </div>
         <div class="card bike-fund" id="bike-fund" data-bike-fund hidden>
           <div>
             <h3>Contribute to the developer's bike fund</h3>
-            <p>FreeGaz is free and always will be. If it saved you a subscription, you can put a little toward the developer's next bike. Totally optional, and it unlocks nothing.</p>
+            <p>CrankHog is free and always will be. If it saved you a subscription, you can put a little toward the developer's next bike. Totally optional, and it unlocks nothing.</p>
           </div>
           <p class="cta-row">
             <a class="btn btn-secondary" data-tip="venmo" hidden>Venmo</a>
@@ -326,10 +332,10 @@ npm run dev</code></pre>
   <footer class="site-footer">
     <div class="track" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     <div class="wrap footer-row">
-      <img src="assets/brand/freegaz-icon.svg" alt="" width="40" height="40">
+      <img src="assets/brand/crankhog-icon.svg" alt="" width="40" height="40">
       <div>
-        <p>FreeGaz is free and open source under the <a href="https://github.com/raytfitzgerald/FreeGaz/blob/main/LICENSE">MIT license</a>. Made by <a href="https://github.com/raytfitzgerald">Ray Fitzgerald</a>.<span data-bike-fund hidden> Chip in to his <a href="#bike-fund">bike fund</a>.</span></p>
-        <p class="fine">FreeGaz is not affiliated with or endorsed by FulGaz, Zwift, TrainerRoad or Wahoo. Product names are trademarks of their owners. <a href="privacy/">Privacy</a></p>
+        <p>CrankHog is free and open source under the <a href="https://github.com/raytfitzgerald/FreeGaz/blob/main/LICENSE">MIT license</a>. Made by <a href="https://github.com/raytfitzgerald">Ray Fitzgerald</a>.<span data-bike-fund hidden> Chip in to his <a href="#bike-fund">bike fund</a>.</span></p>
+        <p class="fine">CrankHog is not affiliated with or endorsed by FulGaz, Zwift, TrainerRoad or Wahoo. Product names are trademarks of their owners. <a href="privacy/">Privacy</a></p>
       </div>
     </div>
   </footer>

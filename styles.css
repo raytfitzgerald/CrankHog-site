@@ -1,4 +1,4 @@
-/* FreeGaz site: the Velodrome brand (docs/BRAND.md in the app repo).
+/* CrankHog site: the Velodrome brand (docs/BRAND.md in the app repo).
    Night is the default; Track day follows the system's light mode. */
 
 @font-face {
@@ -236,6 +236,28 @@ h3 { font-size: 1.4rem; font-weight: 600; }
 .track span:nth-child(2) { background: var(--sprinter); }
 .track span:nth-child(3) { background: var(--measure); height: 2px; }
 .track span:nth-child(4) { background: var(--azur); height: 10px; }
+
+/* Sir Loin, trotting along the painted lines. He runs once when the strip
+   scrolls into view, and not at all if the visitor asked for less motion. */
+.track-hog { position: absolute; bottom: 100%; left: 0; margin-bottom: -6px; width: 56px; height: auto; animation: hog-trot 11s linear infinite; }
+@keyframes hog-trot {
+  0% { transform: translateX(-20vw) scaleX(-1); }
+  45% { transform: translateX(104vw) scaleX(-1); }
+  45.01%, 100% { transform: translateX(104vw) scaleX(-1); opacity: 0; }
+}
+
+/* Meeting him */
+.hog-intro { display: flex; align-items: center; gap: 1.5rem; margin: 0 0 3rem; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.hog-intro img { flex: none; width: 92px; height: auto; }
+.hog-intro figcaption { margin: 0; max-width: 60ch; color: var(--ink-dim); }
+.hog-intro strong { color: var(--ink); }
+@media (max-width: 40rem) {
+  .hog-intro { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track-hog { animation: none; left: 8%; transform: scaleX(-1); }
+}
 
 /* Tour */
 

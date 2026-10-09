@@ -1,6 +1,6 @@
-# freegaz.app
+# crankhog.app
 
-The website for [FreeGaz](https://github.com/raytfitzgerald/FreeGaz), the free indoor trainer app.
+The website for [CrankHog](https://github.com/raytfitzgerald/FreeGaz), the free indoor trainer app.
 
 Plain static HTML and CSS, with no build step. Preview it locally with:
 
