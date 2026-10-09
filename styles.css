@@ -205,7 +205,7 @@ h3 { font-size: 1.4rem; font-weight: 600; }
 
 /* Price board: a timing board */
 
-.board { position: relative; padding: 3.5rem 0 4.5rem; background: var(--panel); border-block: 1px solid var(--line); overflow: hidden; }
+.board { position: relative; padding: 3.5rem 0 8rem; background: var(--panel); border-block: 1px solid var(--line); overflow: hidden; }
 .board-tiles {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
@@ -239,11 +239,14 @@ h3 { font-size: 1.4rem; font-weight: 600; }
 
 /* Sir Loin, trotting along the painted lines. He runs once when the strip
    scrolls into view, and not at all if the visitor asked for less motion. */
-.track-hog { position: absolute; bottom: 100%; left: 0; margin-bottom: -6px; width: 56px; height: auto; animation: hog-trot 11s linear infinite; }
+/* he runs on the boards themselves: his feet land on the painted lines */
+.track-hog { position: absolute; z-index: 1; bottom: 54px; left: 0; width: 62px; height: auto; animation: hog-trot 11s linear infinite; }
 @keyframes hog-trot {
-  0% { transform: translateX(-20vw) scaleX(-1); }
-  45% { transform: translateX(104vw) scaleX(-1); }
-  45.01%, 100% { transform: translateX(104vw) scaleX(-1); opacity: 0; }
+  /* opacity is pinned at both ends of the run: declared only at the far end,
+     it interpolates from the base value and he fades out as he crosses. */
+  0% { transform: translateX(-18vw); opacity: 1; }
+  42% { transform: translateX(104vw); opacity: 1; }
+  42.01%, 100% { transform: translateX(104vw); opacity: 0; }
 }
 
 /* Meeting him */
@@ -256,7 +259,7 @@ h3 { font-size: 1.4rem; font-weight: 600; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .track-hog { animation: none; left: 8%; transform: scaleX(-1); }
+  .track-hog { animation: none; left: 8%; }
 }
 
 /* Tour */
