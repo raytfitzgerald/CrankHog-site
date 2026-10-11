@@ -89,7 +89,17 @@
         </ul>
         <p class="board-note">No Premium tier, no annual plan with the cancel button four menus deep, and no "your trial has ended" email on the morning of your FTP test. The only thing it charges is your legs.</p>
       </div>
-      <img class="track-hog" src="assets/brand/sir-loin.svg" alt="" width="128" height="76">
+      <!-- Sir Loin's stage. Without JS this is the plain <img> doing one pass;
+           the script swaps in the same drawing inlined, so his legs, ears and
+           tail can move, and runs the routine. -->
+      <div class="track-hog" data-hog>
+        <p class="hog-says" data-hog-says hidden></p>
+        <div class="hog-rig" data-hog-rig>
+          <span class="hog-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+          <img class="hog-art" src="assets/brand/sir-loin.svg" alt="" width="128" height="76">
+        </div>
+        <span class="hog-dust" data-hog-dust aria-hidden="true"></span>
+      </div>
       <div class="track" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     </section>
 
@@ -358,6 +368,132 @@ npm run dev</code></pre>
       anyTip = true;
     });
     if (anyTip) document.querySelectorAll("[data-bike-fund]").forEach((el) => (el.hidden = false));
+
+    // --- Sir Loin's routine ------------------------------------------------
+    // He trots in, skids, looks at you, does a trick and sprints off, then
+    // comes round again with a different one. Prod him and he says something.
+    //
+    // The drawing is fetched and inlined so his legs, ears and tail can be
+    // animated; until that lands (or if it fails, or if JS is off) the plain
+    // <img> keeps making its one pass, which is what the CSS does by default.
+    (function () {
+      const stage = document.querySelector("[data-hog]");
+      if (!stage || !window.matchMedia) return;
+      const slow = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (slow.matches) return;
+
+      const rig = stage.querySelector("[data-hog-rig]");
+      const says = stage.querySelector("[data-hog-says]");
+      const LINES = [
+        "I am not drafting. I draft no one.",
+        "You will not catch me. It is nothing personal.",
+        "I have never been FTP tested.",
+        "One gear. It has always been enough.",
+        "Download it. I will wait. I am good at waiting.",
+        "That was my easy pace, since you ask.",
+      ];
+      const TRICKS = ["rear", "hop", "spin", "shake", "bow"];
+      const pick = (a) => a[Math.floor(Math.random() * a.length)];
+      const between = (lo, hi) => lo + Math.random() * (hi - lo);
+
+      // How fast his legs go for each beat. Stopped is slow, not frozen.
+      const LEG_DUR = { enter: 0.4, skid: 0.8, look: 1.9, trick: 1.2, sprint: 0.16, wait: 2.4 };
+      let timer = null;
+      let bubbleTimer = null;
+      const sleep = (ms) => new Promise((r) => { timer = setTimeout(r, ms); });
+      const beat = (name) => {
+        stage.setAttribute("data-beat", name);
+        stage.style.setProperty("--leg-dur", LEG_DUR[name] + "s");
+      };
+      const go = (x, dur, ease) => {
+        stage.style.setProperty("--hog-x", x);
+        stage.style.setProperty("--hog-dur", dur + "ms");
+        stage.style.setProperty("--hog-ease", ease || "linear");
+      };
+      const puff = () => {
+        stage.removeAttribute("data-dust");
+        void stage.offsetWidth;
+        stage.setAttribute("data-dust", "");
+      };
+
+      async function routine() {
+        for (;;) {
+          // off to the left, legs already going
+          beat("enter");
+          go("-20vw", 0);
+          await sleep(60);
+          // trot in and pull up somewhere around the middle
+          const stop = between(32, 56).toFixed(1) + "vw";
+          go(stop, 2600, "cubic-bezier(0.25, 0.6, 0.2, 1)");
+          await sleep(2300);
+          beat("skid");
+          puff();
+          await sleep(420);
+          // notice you, and sometimes have something to say about it
+          beat("look");
+          if (Math.random() < 0.45) speak();
+          await sleep(1200);
+          // and show off
+          beat("trick");
+          const encore = Math.random() < 0.3 ? 2 : 1;
+          let last = null;
+          for (let i = 0; i < encore; i++) {
+            let trick = pick(TRICKS);
+            while (trick === last) trick = pick(TRICKS);
+            last = trick;
+            rig.setAttribute("data-trick", trick);
+            await sleep(trick === "spin" ? 950 : 1500);
+            rig.removeAttribute("data-trick");
+            await sleep(250);
+          }
+          // then leave, fast
+          beat("sprint");
+          puff();
+          go("112vw", 1500, "cubic-bezier(0.5, 0, 0.9, 0.6)");
+          await sleep(1600);
+          beat("wait");
+          await sleep(between(2600, 6000));
+        }
+      }
+
+      function speak() {
+        says.textContent = pick(LINES);
+        says.hidden = false;
+        clearTimeout(bubbleTimer);
+        bubbleTimer = setTimeout(() => { says.hidden = true; }, 3200);
+      }
+      stage.addEventListener("click", speak);
+
+      // Inline the drawing so its parts can move, then start. The <img> keeps
+      // making its single pass if any of this doesn't work out.
+      fetch("assets/brand/sir-loin.svg")
+        .then((r) => (r.ok ? r.text() : Promise.reject()))
+        .then((svg) => {
+          const art = rig.querySelector(".hog-art");
+          if (!art) return Promise.reject();
+          art.insertAdjacentHTML("beforebegin", svg);
+          const inlined = rig.querySelector("svg");
+          if (!inlined || !inlined.querySelector("[data-leg]")) return Promise.reject();
+          inlined.setAttribute("class", "hog-art");
+          inlined.setAttribute("aria-hidden", "true");
+          inlined.removeAttribute("role");
+          inlined.removeAttribute("aria-label");
+          art.remove();
+          stage.setAttribute("data-rigged", "");
+          routine();
+        })
+        .catch(() => {});
+
+      // Nothing to see while the tab is hidden or the board is scrolled past.
+      const pause = (on) => {
+        stage.style.animationPlayState = on ? "paused" : "running";
+        stage.querySelectorAll("*").forEach((el) => { el.style.animationPlayState = on ? "paused" : "running"; });
+      };
+      document.addEventListener("visibilitychange", () => pause(document.hidden));
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver((es) => es.forEach((e) => pause(!e.isIntersecting)), { rootMargin: "80px" }).observe(stage);
+      }
+    })();
 
     // Point the download buttons at the newest release's DMG. The links fall
     // back to the releases page if GitHub doesn't answer.
