@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CrankHog: the free indoor trainer app</title>
-  <meta name="description" content="CrankHog is a free, open-source indoor cycling trainer for macOS and your phone. ERG, workouts, FTP tests, real routes, a workout builder and coaches with opinions. No subscription.">
+  <meta name="description" content="CrankHog is a free, open-source indoor cycling trainer for macOS and your phone. ERG, workouts, FTP tests, real routes, a training calendar for every sport, plans that count back from race day, and coaches with opinions. No subscription.">
   <meta name="theme-color" content="#111d36" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ebf1f7" media="(prefers-color-scheme: light)">
   <meta name="color-scheme" content="dark light">
@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://crankhog.app/">
   <meta property="og:site_name" content="CrankHog">
   <meta property="og:title" content="CrankHog">
-  <meta property="og:description" content="The free indoor trainer app for Mac and your phone. ERG, workouts, FTP tests, real routes and rude coaches. No subscription.">
+  <meta property="og:description" content="The free indoor trainer app for Mac and your phone. ERG, workouts, FTP tests, real routes, training plans and rude coaches. No subscription.">
   <meta property="og:image" content="https://crankhog.app/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -58,7 +58,7 @@
       <div class="wrap">
         <p class="eyebrow">Indoor cycling for macOS and your phone</p>
         <h1>You already bought the bike. Stop paying rent to ride it.</h1>
-        <p class="lede">CrankHog drives your smart trainer in ERG, level, slope or heart-rate mode, runs structured workouts and FTP tests, rides real roads, and keeps every second on your Mac as a FIT file. It costs nothing, now or later.</p>
+        <p class="lede">CrankHog drives your smart trainer in ERG, level, slope or heart-rate mode, runs structured workouts and FTP tests, rides real roads, and keeps every second on your Mac as a FIT file. It plans your runs and swims next to your rides, counts your training back from race day, and gives you a coach who rearranges your week when life gets in the way. It costs nothing, now or later.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/raytfitzgerald/CrankHog/releases" data-dmg>
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
@@ -66,7 +66,7 @@
           </a>
           <a class="btn btn-secondary" href="https://raytfitzgerald.github.io/CrankHog/">Open on your phone</a>
         </div>
-        <p class="fine"><span data-version>v0.6.3</span> · Apple Silicon · Free and open source (MIT)</p>
+        <p class="fine"><span data-version>v1.3.0</span> · Apple Silicon · Free and open source (MIT)</p>
 
         <figure class="hero-shot">
           <picture>
@@ -142,32 +142,59 @@
 
         <article class="feature flip">
           <div class="feature-text">
-            <h3>Workouts you can see before they hurt you</h3>
-            <p>Every workout is drawn as its power profile at your FTP, on three shelves: CrankHog's own, your custom ones, and a training plan you put in order.</p>
-            <p>There's an FTP test too: 20-minute, 8-minute or ramp. A valid result saves your FTP automatically, with one-click undo.</p>
+            <h3>Then the coach does your admin</h3>
+            <p>Tell your coach work is eating you alive, and you get a card back: Tuesday's intervals become an easy spin, the swim moves up a day, Friday turns into a travel day. Every change comes with its reason and the session before and after. Nothing moves until you press Apply, and Undo puts it all back.</p>
+            <p>It can add, move, swap or rewrite sessions, mark sick and travel days, move a race, log a squash game and set your FTP. It won't touch a session you've done, and it won't plan anything in the past.</p>
           </div>
-          <figure class="shot"><img loading="lazy" src="assets/img/workouts.png" width="1600" height="1000" alt="The Workouts page: every workout drawn as its power profile, with Custom workouts and Training plan tabs"></figure>
+          <figure class="shot"><img loading="lazy" src="assets/img/coach-chat.png" width="1600" height="1000" alt="The coach chat: the rider says work is busy and they're away Friday; the Drill Sergeant answers with a card of three changes, each with its reason, and the calendar before and after, waiting for Apply"></figure>
         </article>
 
         <article class="feature">
+          <div class="feature-text">
+            <h3>And writes the whole plan</h3>
+            <p>Ask for a plan for your race. The coach asks what it needs to know (your days, your hours, your pool, what hurts), then drafts every week: phases and recovery weeks, hours of each sport, and every session with its steps. Say "less swimming" and it rewrites only the weeks that change. Accept it and it lands on your calendar, counted back from race day.</p>
+            <p>Got a plan from a human coach? Drop in the spreadsheet, Word file or PDF, and your AI reads it into sessions you check before anything is saved. Works with Claude, OpenAI, Grok or a local Ollama.</p>
+          </div>
+          <figure class="shot"><img loading="lazy" src="assets/img/coach-plan.png" width="1600" height="1000" alt="A draft plan in the coach chat: twelve weeks to an Olympic triathlon, a bar for each week's hours, base, build, peak and taper with their key sessions, hours of each sport, and week one's sessions"></figure>
+        </article>
+
+        <article class="feature flip">
+          <div class="feature-text">
+            <h3>A calendar for the whole week</h3>
+            <p>Every planned workout shows its length, load and shape. Done turns green, missed turns red. Drag a session to another day, mark your races and days off, and each week adds up your ride, run, swim and other time against the plan, with fitness and form projected ahead.</p>
+            <p>Runs, swims and squash come in from your watch's FIT files or intervals.icu, or you log them by hand. Your plan shows up in Google Calendar, and planned runs and swims go to your Garmin through intervals.icu.</p>
+          </div>
+          <figure class="shot"><img loading="lazy" src="assets/img/calendar.png" width="1600" height="1000" alt="The Calendar a month ahead: the triathlon plan's swims, rides and runs on their days, each with its length and load, and beside every week its planned time by sport and the fitness, fatigue and form it leads to"></figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h3>Workouts you can see before they hurt you</h3>
+            <p>Every workout is drawn as its power profile at your FTP. Bike, Run and Swim each get a tab, and Bike has three shelves: CrankHog's own workouts, your custom ones, and your training plans.</p>
+            <p>There's an FTP test too: 20-minute, 8-minute or ramp. A valid result saves your FTP automatically, with one-click undo.</p>
+          </div>
+          <figure class="shot"><img loading="lazy" src="assets/img/workouts.png" width="1600" height="1000" alt="The Workouts page: Bike, Run and Swim tabs, and every bike workout drawn as its power profile at your FTP"></figure>
+        </article>
+
+        <article class="feature flip">
           <div class="feature-text">
             <h3>And some your old app would never have shipped</h3>
             <p>Eight rude workouts where the power chart is the joke. The Bird is four knuckles at threshold and a middle finger at 150&nbsp;% FTP. Mount Stupid is the Dunning-Kruger curve. Stairway to Hell has no landing. Liar Liar says "last one" seven times.</p>
             <p>The other four have names that don't belong on a homepage.</p>
           </div>
-          <figure class="shot"><img loading="lazy" src="assets/img/the-bird.png" width="1600" height="1151" alt="The Bird: a workout whose power profile is a hand with the middle finger raised, at 150 % FTP"></figure>
+          <figure class="shot"><img loading="lazy" src="assets/img/the-bird.png" width="1600" height="1000" alt="The Bird: a workout whose power profile is a hand with the middle finger raised, at 150 % FTP"></figure>
         </article>
 
-        <article class="feature flip">
+        <article class="feature">
           <div class="feature-text">
             <h3>A builder for the ones nobody has written yet</h3>
             <p>Drag blocks, resize them, type intervals.icu text, or describe it and let the AI write it. Live TSS, IF and zone totals at your FTP.</p>
-            <p>Import <code>.zwo</code>, <code>.mrc</code> and <code>.erg</code>, and export straight into Zwift's custom workouts.</p>
+            <p>Import <code>.zwo</code>, <code>.mrc</code> and <code>.erg</code>, and export straight into Zwift's custom workouts. Runs and swims get a builder of their own: sections and repeats, distance or time, and pace or heart-rate targets.</p>
           </div>
           <figure class="shot"><img loading="lazy" src="assets/img/builder.png" width="1600" height="1000" alt="The builder: name, author and folder, live TSS, IF and zones, blocks you drag and resize, and export to Zwift"></figure>
         </article>
 
-        <article class="feature">
+        <article class="feature flip">
           <div class="feature-text">
             <h3>Real roads, real gradients</h3>
             <p>Import a GPX and the trainer climbs when the road does. Race a ghost of your last attempt if you're feeling brave.</p>
@@ -211,26 +238,60 @@
             <ul>
               <li>A zwofactory-style drag-and-drop builder</li>
               <li>intervals.icu text mode, synced both ways</li>
+              <li>A run and swim builder: pace, HR or % of threshold</li>
               <li>Import <code>.zwo</code>, <code>.mrc</code>, <code>.erg</code></li>
               <li>Export to Zwift</li>
               <li>Optional AI: describe it, then edit it</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Coaching</h3>
+            <h3>Coaches</h3>
             <ul>
               <li>Twenty-seven personas with faces and a voice</li>
               <li>Your own coach: name, photo, personality</li>
               <li>Spice 1–5, profanity Clean to Unhinged</li>
               <li>The ride-along: pace them or drop them</li>
-              <li>Coach chat with Claude, OpenAI, Grok or Ollama</li>
+              <li>Countdown beeps before every interval ends</li>
               <li>Mute with <kbd>C</kbd>; safety prompts still get through</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>The coach chat</h3>
+            <ul>
+              <li>Claude, OpenAI, Grok or a local Ollama</li>
+              <li>Knows your plan, calendar, races and every sport</li>
+              <li>Proposes changes as a card you apply or undo</li>
+              <li>Builds a whole plan in the conversation</li>
+              <li>Reads your coach's plan from a spreadsheet, Word or PDF</li>
+              <li>A master prompt and notes, so it knows you</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Calendar and plans</h3>
+            <ul>
+              <li>A month of planned and done, dragged where you like</li>
+              <li>A, B and C races, rest, sick and travel days</li>
+              <li>Plans built for you, imported, or started empty</li>
+              <li>Plans that count back from race day</li>
+              <li>Planned against done, by sport, every week</li>
+              <li>Your plan in Google Calendar</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Runs, swims and the rest</h3>
+            <ul>
+              <li>Runs, swims and squash next to your rides</li>
+              <li>From your watch's FIT files, intervals.icu, or by hand</li>
+              <li>Load on the same scale as ride TSS</li>
+              <li>Swims counted in metres or yards</li>
+              <li>Planned runs and swims to your Garmin</li>
+              <li>Fitness and form count every sport</li>
             </ul>
           </div>
           <div class="card">
             <h3>Your history</h3>
             <ul>
-              <li>A ride list or a calendar shaded by load</li>
+              <li>Every ride, newest first, and an optional AI debrief</li>
               <li>Fitness, fatigue and form; power curve; FTP history</li>
               <li>A plain-English fitness overview</li>
               <li>A FIT file for every ride</li>
@@ -245,7 +306,7 @@
               <li>Heart-rate straps and Garmin HR broadcast</li>
               <li>Power meters, speed and cadence sensors</li>
               <li>Headwind fans, CORE and Moxy</li>
-              <li>Strava, intervals.icu and Garmin Connect (FIT)</li>
+              <li>Strava, intervals.icu, Google Calendar and Garmin Connect (FIT)</li>
             </ul>
             <p class="card-note">Tested on a Wahoo KICKR and a heart-rate strap. Everything else follows the Bluetooth specs and is tested against a simulator.</p>
           </div>
@@ -262,7 +323,8 @@
         </div>
         <div class="data-text">
           <p>Everything lives on your Mac: the ride database, plus a FIT file per ride in <code>~/Documents/CrankHog/Rides</code>. Point that folder at iCloud Drive for free sync.</p>
-          <p>Nothing leaves the machine unless you connect Strava or intervals.icu, turn on an AI provider, or send a bug report. API keys are encrypted with your macOS Keychain.</p>
+          <p>Nothing leaves the machine unless you connect Strava, intervals.icu or Google Calendar, turn on an AI provider, or send a bug report. API keys are encrypted with your macOS Keychain.</p>
+          <p>Your AI provider gets what you keep in CrankHog when you chat: rides, other sports, plans and the calendar. Never your name, and never anything from Strava. Google Calendar gets only your planned sessions, in a calendar of their own.</p>
         </div>
       </div>
     </section>
@@ -308,7 +370,7 @@
             <h3>Mac</h3>
             <p>Needs a Mac with Apple Silicon and Bluetooth.</p>
             <ol>
-              <li>Download <span class="mono" data-dmg-name>CrankHog-0.6.3-arm64.dmg</span> and drag CrankHog to Applications.</li>
+              <li>Download <span class="mono" data-dmg-name>CrankHog-1.3.0-arm64.dmg</span> and drag CrankHog to Applications.</li>
               <li>Open CrankHog. It's signed and notarized by Apple, so macOS only asks the usual "downloaded from the Internet" question. Click <strong>Open</strong>.</li>
               <li>Quit Zwift and the Wahoo app so CrankHog can control the trainer, then press <strong>Connect trainer</strong>.</li>
             </ol>
