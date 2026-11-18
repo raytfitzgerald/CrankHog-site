@@ -40,10 +40,10 @@
     <div class="wrap">
       <p class="eyebrow">Privacy policy</p>
       <h1>Your app data stays on your device.</h1>
-      <p class="fine">Updated 23 October 2026. Covers the Mac app, the iPhone app, the web app and this website.</p>
+      <p class="fine">Updated 18 November 2026. Covers the Mac app, the iPhone app, the web app and this website.</p>
 
       <h2>What stays on your device</h2>
-      <p>Your rides, workouts, routes, journeys, FTP history, profile (name, photo, weight, heart-rate zones) and settings are stored only on your Mac, iPhone or browser. Every ride is also saved as a FIT file on the same device. The CrankHog apps have no accounts, no servers that hold your ride data, no analytics, no tracking and no ads. Website download counts are described separately below.</p>
+      <p>Your rides, other activities, workouts, training plans, calendar, routes, journeys, FTP history, profile (name, photo, weight, heart-rate zones, threshold paces) and settings are stored only on your Mac, iPhone or browser. Every ride is also saved as a FIT file on the same device. The CrankHog apps have no accounts, no servers that hold your ride data, no analytics, no tracking and no ads. Website download counts are described separately below.</p>
 
       <h2>Bluetooth</h2>
       <p>CrankHog uses Bluetooth only to connect to your smart trainer, heart-rate strap and other cycling sensors, so it can set the resistance and record your ride. Nothing about your devices leaves your device.</p>
@@ -54,10 +54,13 @@
       <h2>Things you choose to connect</h2>
       <p>Nothing is sent anywhere unless you set it up yourself:</p>
       <ul>
-        <li><strong>Strava or intervals.icu</strong> (Mac app): when you connect your account, finished rides are uploaded to it. Your keys and tokens are kept in your Mac's keychain.</li>
-        <li><strong>AI coaching</strong> (Mac app): if you add an API key for Anthropic, OpenAI, xAI or a local Ollama, the rides you ask about are sent to that provider to answer you. If you make your own coach, its name and the description you write are sent along so the AI can play them. Their own privacy policies apply.</li>
+        <li><strong>Strava</strong> (Mac app): when you connect your account, finished rides are uploaded to it. CrankHog never reads your Strava data.</li>
+        <li><strong>intervals.icu</strong> (Mac app): when you connect your account, finished rides are uploaded to it. If you ask, CrankHog also brings in the workouts you plan there and, if you turn it on, your completed activities, and sends the planned runs and swims you choose to it.</li>
+        <li><strong>Google Calendar</strong> (Mac app): if you sign in with Google, CrankHog makes a calendar named CrankHog in your Google account and keeps your planned sessions in it, from 30 days ago onward: each one's name, day and a description (sport, length, distance, effort, load, notes and steps). It can only reach the calendar it made, reading that calendar's events to keep them matching your plan. It can't see or change your other calendars or events. Signing out revokes its access. Google's privacy policy applies.</li>
+        <li><strong>AI coaching</strong> (Mac app): if you add an API key for Anthropic, OpenAI, xAI or use a local Ollama, the coach chat sends that provider what you keep in CrankHog, so it can answer you and propose changes: your rides, runs, swims and other activities (including those from intervals.icu), your training plans, calendar, races and days off, and your training numbers, such as FTP, weight, heart-rate zones and threshold paces. A ride debrief sends that ride, and the fitness overview your fitness numbers. If you make your own coach, its name, description and master prompt go too, and so do the notes you write for your coaches. If you import a plan document with AI, its text is sent on its own, only after you confirm. Your name, your photos and anything from Strava are never sent. Their own privacy policies apply.</li>
         <li><strong>Bug reports</strong>: the report form opens a GitHub issue in your browser with the details you can see and edit. Nothing is sent unless you submit it on GitHub.</li>
       </ul>
+      <p>The keys and tokens for all of these are kept in your Mac's keychain.</p>
 
       <h2>Maps</h2>
       <p>Journey maps are drawn from road data that ships inside the app (© OpenStreetMap contributors). Riding a journey doesn't contact any map service. If you turn on "Map on Strava", the virtual route is written into that ride's FIT file and uploaded with it.</p>
