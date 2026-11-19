@@ -40,7 +40,7 @@
     <div class="wrap">
       <p class="eyebrow">Privacy policy</p>
       <h1>Your app data stays on your device.</h1>
-      <p class="fine">Updated 18 November 2026. Covers the Mac app, the iPhone app, the web app and this website.</p>
+      <p class="fine">Updated 19 November 2026. Covers the Mac app, the iPhone app, the web app and this website.</p>
 
       <h2>What stays on your device</h2>
       <p>Your rides, other activities, workouts, training plans, calendar, routes, journeys, FTP history, profile (name, photo, weight, heart-rate zones, threshold paces) and settings are stored only on your Mac, iPhone or browser. Every ride is also saved as a FIT file on the same device. The CrankHog apps have no accounts, no servers that hold your ride data, no analytics, no tracking and no ads. Website download counts are described separately below.</p>
@@ -58,12 +58,14 @@
         <li><strong>intervals.icu</strong> (Mac app): when you connect your account, finished rides are uploaded to it. If you ask, CrankHog also brings in the workouts you plan there and, if you turn it on, your completed activities, and sends the planned runs and swims you choose to it.</li>
         <li><strong>Google Calendar</strong> (Mac app): if you sign in with Google, CrankHog makes a calendar named CrankHog in your Google account and keeps your planned sessions in it, from 30 days ago onward: each one's name, day and a description (sport, length, distance, effort, load, notes and steps). It can only reach the calendar it made, reading that calendar's events to keep them matching your plan. It can't see or change your other calendars or events. Signing out revokes its access. Google's privacy policy applies.</li>
         <li><strong>AI coaching</strong> (Mac app): if you add an API key for Anthropic, OpenAI, xAI or use a local Ollama, the coach chat sends that provider what you keep in CrankHog, so it can answer you and propose changes: your rides, runs, swims and other activities (including those from intervals.icu), your training plans, calendar, races and days off, and your training numbers, such as FTP, weight, heart-rate zones and threshold paces. A ride debrief sends that ride, and the fitness overview your fitness numbers. If you make your own coach, its name, description and master prompt go too, and so do the notes you write for your coaches. If you import a plan document with AI, its text is sent on its own, only after you confirm. Your name, your photos and anything from Strava are never sent. Their own privacy policies apply.</li>
+        <li><strong>Claude Desktop and Claude Code</strong> (Mac app): if you turn on Claude in Settings → AI, those Claude apps on your Mac can read what the coach chat gets (see AI coaching) and, if you allow it, change your calendar, workouts and plans. What Claude reads goes to Anthropic under your own Claude account, and Anthropic's privacy policy applies. Only apps running on your Mac under your account can reach CrankHog. Your name, your photos and anything from Strava are never sent.</li>
+        <li><strong>Ride with others</strong> (Mac app, beta): if you turn it on, CrankHog connects to an OpenBikeNet server: openbikenet.cloud unless you name another, run by the OpenBikeNet project, not by CrankHog. It tells the server which shared track you're looking at, and while you ride one it sends, once a second, the name you chose for other riders, your lap, distance and speed, your power and cadence unless you turn them off, and your heart rate only if you turn it on. Everyone on that track sees them, and which app you use. The server also sees your IP address. Nothing is sent while it's off.</li>
         <li><strong>Bug reports</strong>: the report form opens a GitHub issue in your browser with the details you can see and edit. Nothing is sent unless you submit it on GitHub.</li>
       </ul>
-      <p>The keys and tokens for all of these are kept in your Mac's keychain.</p>
+      <p>Any keys and tokens for these are kept in your Mac's keychain.</p>
 
       <h2>Maps</h2>
-      <p>Journey maps are drawn from road data that ships inside the app (© OpenStreetMap contributors). Riding a journey doesn't contact any map service. If you turn on "Map on Strava", the virtual route is written into that ride's FIT file and uploaded with it.</p>
+      <p>Journey maps are drawn from road data that ships inside the app (© OpenStreetMap contributors). The real map and the 3D view on a journey (Mac app) load map tiles from OpenFreeMap and terrain from the AWS Terrain Tiles dataset, so those services see your IP address and which part of the world is on screen. The real map is used for CrankHog's famous journeys to start with. Routes you import stay on the drawn map unless you choose otherwise in Settings → Journeys, where you can also turn the real map off. If you turn on "Map on Strava", the virtual route is written into that ride's FIT file and uploaded with it.</p>
 
       <h2>Children</h2>
       <p>CrankHog isn't aimed at children. The apps collect no data from anyone, of any age.</p>
